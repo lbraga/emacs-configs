@@ -160,8 +160,8 @@ the directories in the INCLUDE environment variable."
 
 (custom-theme-set-faces
  'default-dark
- '(show-paren-match ((t (:background "#333399"))))
- '(region ((t (:background "#464740"))))
+ '(show-paren-match ((t (:background "#101b1e"))))
+ '(region ((t (:background "#abc5cb"))))
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Monaco"))))
  '(company-tooltip ((t (:background "#cccccc" :foreground "black"))))
  '(company-scrollbar-bg ((t (:background "#999999"))))
