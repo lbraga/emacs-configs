@@ -2,7 +2,7 @@
 (global-font-lock-mode 1)
 
 ;;; add modes to the load path
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\.lua$" . lua-mode))
