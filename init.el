@@ -30,7 +30,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 80 :width normal)))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 90 :width normal)))))
 
 (defun my-c-mode-hook () 
    (setq indent-tabs-mode nil 
@@ -169,3 +169,10 @@ the directories in the INCLUDE environment variable."
  '(mode-line ((t (:background "darkblue" :foreground "grey85" :box (:line-width -1 :style released-button))))))
 
 (provide-theme 'default-dark)
+
+(defun astyle-this-buffer (pmin pmax)
+  (interactive "r")
+  (shell-command-on-region pmin pmax
+			   "astyle --style=google --indent=spaces=3" ;; add options here...
+			   (current-buffer) t
+			   (get-buffer-create "*Astyle Errors*") t))
