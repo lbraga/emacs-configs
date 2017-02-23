@@ -23,18 +23,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(font-use-system-font t)
  '(inhibit-startup-screen t)
  '(irony-cdb-search-directory-list (quote ("." "Test"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 90 :width normal)))))
 
 (defun my-c-mode-hook () 
    (setq indent-tabs-mode nil 
-         c-basic-offset 4)) 
+         c-basic-offset 3)) 
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
 (defun my-groovy-mode-hook () 
@@ -170,9 +165,20 @@ the directories in the INCLUDE environment variable."
 
 (provide-theme 'default-dark)
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 83 :width normal)))))
+
 (defun astyle-this-buffer (pmin pmax)
   (interactive "r")
   (shell-command-on-region pmin pmax
 			   "astyle --style=google --indent=spaces=3" ;; add options here...
 			   (current-buffer) t
 			   (get-buffer-create "*Astyle Errors*") t))
+
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
